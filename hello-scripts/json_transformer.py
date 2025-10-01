@@ -2,9 +2,12 @@ import json
 import argparse
 
 def transform_json(file_path):
-    with open(file_path) as f:
+    with open(file_path, "r", encoding="utf-8") as f:
         data = json.load(f)
-    print(json.dumps(data, indent=4))  # just pretty-print as a start
+        
+    print("JSON Transformer")
+    print("----------------")
+    print(json.dumps(data, indent=4))  # Pretty-print JSON
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Transform a JSON file")
