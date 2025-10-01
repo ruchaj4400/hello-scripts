@@ -1,10 +1,14 @@
 import argparse
+import re
 
 def count_tokens(file_path):
-    with open(file_path, 'r') as f:
+    with open(file_path, 'r', encoding="utf-8") as f:
         text = f.read()
-    tokens = text.split()
-    print(f"Total words: {len(tokens)}")
+        
+    tokens = text.findall(r"\w+", text)
+    print("Text Token Counter")
+    print("------------------")
+    print(f"Number of tokens (words): {len(tokens)}")
     
 
 if __name__ == "__main__":
